@@ -4,7 +4,7 @@
 
 [<img src="https://cloud.githubusercontent.com/assets/170270/5219062/f22a978c-7685-11e4-8316-af25b6c89bc0.png" width="300">](http://sindresorhus.com/github-markdown-css)
 
-## [Demo](https://sindresorhus.com/github-markdown-css)
+## [Demo](https://nihaojob.github.io/github-markdown-css-smartisan)
 
 ## Install
 
