@@ -726,14 +726,18 @@ body {
   line-height: 1.25;
 }
 
-.markdown-body h1 {
-  font-size: 2em;
-}
+
 
 .markdown-body h1,
 .markdown-body h2 {
   padding-bottom: .3em;
   border-bottom: 1px solid #fff6f6;
+}
+
+.markdown-body h1 {
+  font-size: 2.3em;
+  margin-bottom: 1em;
+  border: none;
 }
 
 .markdown-body h2 {
