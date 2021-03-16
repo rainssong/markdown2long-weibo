@@ -1,4 +1,4 @@
-# github-markdown-css
+# github-markdown-css-smartisan
 
 > The minimal amount of CSS to replicate the GitHub Markdown style
 
