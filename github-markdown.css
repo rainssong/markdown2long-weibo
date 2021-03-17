@@ -86,7 +86,6 @@ body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
-  color: #24292e;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
   font-size: 16px;
   line-height: 1.5;
@@ -640,9 +639,11 @@ body {
   position: absolute;
   left: 23px;
   right: 23px;
+  pointer-events: none;
   top: 33px;
   bottom: 115px;
   border: 2px solid #e9e5d9;
+  text-align: bottom;
 }
 
 .markdown-body:after {
@@ -735,7 +736,7 @@ body {
 }
 
 .markdown-body h1 {
-  font-size: 2.3em;
+  font-size: 2.8em;
   margin-bottom: 1em;
   border: none;
 }
@@ -765,17 +766,26 @@ body {
 .markdown-body ul {
   padding-left: 0em;
 }
+.markdown-body > ol {
+  padding-left: 1.6em;
+}
+
 
 .markdown-body ol ol,
 .markdown-body ol ul,
 .markdown-body ul ol,
 .markdown-body ul ul {
   margin-top: 0;
+  margin-left: 1em;
   margin-bottom: 0;
 }
 
+
 .markdown-body li {
   word-wrap: break-all;
+}
+
+.markdown-body ul li {
   line-height: 45px;
   color: #645647;
   min-height: 45px;
@@ -786,7 +796,20 @@ body {
   font-size: 24px;
 }
 
-.markdown-body li:after {
+.markdown-body ol li {
+  line-height: 45px;
+  color: #645647;
+  min-height: 45px;
+  /* text-indent: 18px; */
+  position: relative;
+  /* list-style: none; */
+  /* word-break: break-all; */
+  font-size: 24px;
+}
+
+
+
+.markdown-body ul li:after {
   content: '.';
   width: 8px;
   position: absolute;
@@ -841,7 +864,7 @@ body {
 
 .markdown-body table tr {
   background-color: #fff;
-  border-top: 1px solid #c6cbd1;
+  border-top: 1px solid #ebdfd5;
 }
 
 .markdown-body table tr:nth-child(2n) {
@@ -1057,6 +1080,10 @@ body {
   list-style-type: none;
 }
 
+
+.markdown-body > ul.task-list{
+  padding-left: 1.6em;
+}
 .markdown-body .task-list-item::after{
   display: none;
 }

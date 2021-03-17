@@ -1,20 +1,23 @@
 # github-markdown-css-smartisan
 
-> 我喜欢锤子便签，于是就有了这个项目
+> 我很喜欢锤子便签的样式，于是把他们的样式抄了下来。
 
 [<img src="https://nihaojob.github.io/github-markdown-css-smartisan/demo.png" width="300">](http://sindresorhus.com/github-markdown-css)
 
 ## [Demo](https://nihaojob.github.io/github-markdown-css-smartisan)
 
-[锤子便签样式](https://yun.smartisan.com/apps/note/md.html)
+你可以从这里和官网对比一下
+[官方地址](https://yun.smartisan.com/apps/note/md.html)。
 
 ## Install
 
-Download [manually](https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css), from [CDNJS](https://cdnjs.com/libraries/github-markdown-css), or with npm:
+暂时没有提供npm包，你可以拷贝把文件拷贝下来使用。
+
+<!-- Download [manually](https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css), from [CDNJS](https://cdnjs.com/libraries/github-markdown-css), or with npm:
 
 ```
 $ npm install github-markdown-css
-```
+``` -->
 
 ## Usage
 
