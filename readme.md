@@ -2,7 +2,7 @@
 
 > 我很喜欢锤子便签的样式，于是把他们的样式抄了下来。
 
-[<img src="https://nihaojob.github.io/github-markdown-css-smartisan/demo.png" width="300">](http://sindresorhus.com/github-markdown-css)
+[<img src="https://nihaojob.github.io/github-markdown-css-smartisan/demo.png" width="300">](https://nihaojob.github.io/github-markdown-css-smartisan)
 
 ## [Demo](https://nihaojob.github.io/github-markdown-css-smartisan)
 
