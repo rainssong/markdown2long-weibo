@@ -1,10 +1,10 @@
 {
-	"name": "github-markdown-css",
-	"version": "4.0.0",
-	"description": "The minimal amount of CSS to replicate the GitHub Markdown style",
+	"name": "markdown-css-smartisan",
+	"version": "0.0.1",
+	"description": "Markdown theme style css for smartisan",
 	"license": "MIT",
-	"repository": "sindresorhus/github-markdown-css",
-	"funding": "https://github.com/sponsors/sindresorhus",
+	"repository": "https://github.com/nihaojob/github-markdown-css-smartisan",
+	"funding": "",
 	"gitHooks": {
 		"pre-commit": "lint-staged"
 	  },
@@ -14,9 +14,9 @@
 		]
 	},
 	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "https://sindresorhus.com"
+		"name": "秦少卫",
+		"email": "nihaojob@163.dom",
+		"url": "https://github.com/nihaojob"
 	},
 	"main": "github-markdown.css",
 	"scripts": {
