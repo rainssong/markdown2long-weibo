@@ -5,6 +5,14 @@
 	"license": "MIT",
 	"repository": "sindresorhus/github-markdown-css",
 	"funding": "https://github.com/sponsors/sindresorhus",
+	"gitHooks": {
+		"pre-commit": "lint-staged"
+	  },
+	  "lint-staged": {
+		"*.{vue,css,less}": [
+			"stylelint --fix"
+		]
+	},
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
@@ -27,6 +35,10 @@
 		"stylesheet"
 	],
 	"devDependencies": {
-		"generate-github-markdown-css": "^4.0.0"
+		"generate-github-markdown-css": "^4.0.0",
+		"lint-staged": "^10.5.4",
+		"stylelint": "^13.12.0",
+		"stylelint-config-rational-order": "^0.1.2",
+		"stylelint-config-standard": "^21.0.0"
 	}
 }
