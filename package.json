@@ -24,7 +24,8 @@
 		"make": "github-markdown-css > github-markdown.css"
 	},
 	"files": [
-		"github-markdown.css"
+		"github-markdown.css",
+		"bg.jpg"
 	],
 	"keywords": [
 		"browser",
