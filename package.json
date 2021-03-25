@@ -1,6 +1,6 @@
 {
 	"name": "markdown-css-smartisan",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Markdown theme style css for smartisan",
 	"license": "MIT",
 	"repository": "https://github.com/nihaojob/github-markdown-css-smartisan",
@@ -8,8 +8,8 @@
 	"funding": "",
 	"gitHooks": {
 		"pre-commit": "lint-staged"
-	  },
-	  "lint-staged": {
+	},
+	"lint-staged": {
 		"*.{vue,css,less}": [
 			"stylelint --fix"
 		]
