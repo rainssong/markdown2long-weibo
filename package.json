@@ -4,6 +4,7 @@
 	"description": "Markdown theme style css for smartisan",
 	"license": "MIT",
 	"repository": "https://github.com/nihaojob/github-markdown-css-smartisan",
+	"homepage": "https://github.com/nihaojob/github-markdown-css-smartisan",
 	"funding": "",
 	"gitHooks": {
 		"pre-commit": "lint-staged"
