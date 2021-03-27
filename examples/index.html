@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Markdown Editor</title>
+    <title>Smartisan Markdown Editor</title>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/marked@0.3.6"></script>
     <script src="https://unpkg.com/lodash@4.16.0"></script>
+    <script src="https://unpkg.com/dom-to-image@2.6.0"></script>
     <link rel="stylesheet" type="text/css" href="../github-markdown.css" />
+    <script src="https://unpkg.com/splitpanes"></script>
+    <link href="https://unpkg.com/splitpanes/dist/splitpanes.css" rel="stylesheet">
     <style>
 * { margin: 0; padding: 0; }
 
 html,
 body,
 #editor {
-  display: flex;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -21,17 +23,23 @@ body,
 }
 
 textarea,
-#editor > div {
-  flex: 1;
+#editor > div.box {
   box-sizing: border-box;
-  width: 50%;
   height: 100%;
+  padding: 40px;
   vertical-align: top;
 }
-.markdown-box { padding: 60px 40px 80px 40px; overflow-y: auto; }
+
+.box {
+  padding: 60px 40px 80px 40px;
+  overflow-y: auto;
+}
 
 textarea {
+  display: block;
+  width: 100%;
   padding: 30px;
+  padding-bottom: 60px;
   font-size: 16px;
   font-family: "Monaco", courier, monospace;
   background-color: #f6f6f6;
@@ -41,25 +49,87 @@ textarea {
   resize: none;
 }
 
-.markdown-body {
-  width: 80%;
-  margin: 0 auto;
+.buttons {
+  position: absolute;
+  right: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  padding-top: 4px;
+  padding-right: 5px;
+  text-align: right;
+  background: -webkit-linear-gradient(top, #827265, #716053);
+  border-top: 1px #564944 solid;
+}
+
+.buttons button {
+  display: inline-block;
+  height: 36px;
+  padding: 1px;
+  font-size: 14px;
+  line-height: 36px;
+  vertical-align: top;
+  background: -webkit-linear-gradient(#57483d, #4f4135);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttons button span {
+  display: block;
+  height: 34px;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 14px;
+  background: -webkit-linear-gradient(#816f61, #736357);
+  border-radius: 7px;
+  box-shadow: 0 1px rgb(255 255 255 / 10%) inset;
+}
+
+.splitpanes__pane {
+  position: relative;
+  overflow-y: auto;
+}
+
+.splitpanes__splitter {
+  width: 4px;
+  background: #c7c7c7;
+}
+
+.buttons button:hover span {
+  background: -webkit-linear-gradient(#8e7968, #7e6c5e);
+}
+
+.buttons button:focus {
+  border: none;
+  outline: none;
 }
 
       </style>
   </head>
   <body>
     <div id="editor">
-      <textarea :value="input" @input="update"></textarea>
-      <div class="markdown-box">
-        <div class="markdown-body" v-html="compiledMarkdown"></div>
-      </div>
+
+      <splitpanes>
+        <pane>
+          <textarea :value="input" @input="update"></textarea>
+          <div class="buttons">
+            <button @click="down"><span>保存为图片</span></button>
+            <button @click="save"><span>缓存</span></button>
+            <button @click="clear"><span>清空</span></button>
+          </div>
+        </pane>
+        <pane>
+          <div class="box">
+            <div class="markdown-body" id="markdown-down-id" v-html="compiledMarkdown"></div>
+          </div>
+        </pane>
+      </splitpanes>
     </div>
     <script>
-      new Vue({
-        el: "#editor",
-        data: {
-          input: `
+
+      const md = `
 # 致敬老罗的锤子科技
 
 > 你优雅的文字应该有个好的主题。
@@ -83,7 +153,9 @@ textarea {
 
 ---
 ## 合并重复的条件片段
+
 如果一个函数体内有一些条件分支语句，而这些条件分支语句内部散布了一些重复的代码，那么就有必要进行合并去重工作。
+
 ---
 ## 把条件分支语句提炼成函数
 在程序设计中，复杂的条件分支语句是导致程序难以阅读和理解的重要原因，而且容易导致一个庞大的函数。
@@ -131,16 +203,46 @@ textarea {
 2. 不对应风险
 3. 合理的安排临时任务
 `
-        },
+
+      new Vue({
+        el: "#editor",
+        data: {
+          downIng: true,
+          input: ''},
         computed: {
           compiledMarkdown: function() {
             return marked(this.input, { sanitize: true });
           }
         },
+        components: { Splitpanes: splitpanes.Splitpanes, Pane:splitpanes.Pane },
+        created:function(){
+          if(localStorage.getItem('smartisan')){
+            this.input = localStorage.getItem('smartisan')
+            if(this.input === '') this.input = md
+          } else {
+            this.input = md
+          }
+        },
         methods: {
           update: _.debounce(function(e) {
             this.input = e.target.value;
-          }, 300)
+          }, 300),
+          save:function(){
+            localStorage.setItem('smartisan', this.input)
+            alert('缓存成功')
+          },
+          down:function(){
+            domtoimage.toJpeg(document.getElementById('markdown-down-id'), { quality: 0.95 })
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = 'Markdown-Smartisan.jpeg';
+                link.href = dataUrl;
+                link.click();
+            });
+          },
+          clear: function(){
+            this.input = ''
+          }
         }
       });
     </script>
