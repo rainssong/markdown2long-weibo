@@ -862,7 +862,7 @@ body {
 .markdown-body table,
 .markdown-body ul {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 1.8em;
 }
 
 .markdown-body pre,

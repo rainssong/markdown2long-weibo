@@ -5,7 +5,7 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/marked@0.3.6"></script>
     <script src="https://unpkg.com/lodash@4.16.0"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/markdown-css-smartisan/github-markdown.css" />
+    <link rel="stylesheet" type="text/css" href="../github-markdown.css" />
     <style>
 * { margin: 0; padding: 0; }
 
@@ -13,6 +13,7 @@ html,
 body,
 #editor {
   display: flex;
+  width: 100%;
   height: 100%;
   padding: 0;
   overflow: hidden;
@@ -58,7 +59,16 @@ textarea {
       new Vue({
         el: "#editor",
         data: {
-          input: `# 代码重构
+          input: `
+# 致敬老罗的锤子科技
+
+> 你优雅的文字应该有个好的主题。
+
+![](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimgs.ebrun.com%2Fresources%2F2014_07%2F2014_07_23%2F201407237781406086217788_origin.jpg&refer=http%3A%2F%2Fimgs.ebrun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1619399887&t=2e8fd7b192b7e860d1df0720446484c8)
+
+---
+
+# 代码重构
 
 > 从某种角度来看，设计模式的目的就是为许多重构行为提供目标。
 
