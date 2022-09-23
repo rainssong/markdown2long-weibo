@@ -106,6 +106,19 @@ textarea {
   outline: none;
 }
 
+
+#markdown-down-id{
+  position: relative;
+}
+
+.logo{
+  color: #D7D4CE;
+  position: absolute;
+  bottom: 58px;
+  left: 24px;
+  font-size: 20px;
+}
+
       </style>
   </head>
   <body>
@@ -121,8 +134,14 @@ textarea {
           </div>
         </pane>
         <pane>
-          <div class="box">
-            <div class="markdown-body" id="markdown-down-id" v-html="compiledMarkdown"></div>
+          <div class="box" >
+            <div id="markdown-down-id">
+              <div class="markdown-body"  v-html="compiledMarkdown">
+              </div>
+              <div class="logo" contenteditable>
+                markdown-css-smartisan
+              </div>
+            </div>
           </div>
         </pane>
       </splitpanes>
@@ -246,6 +265,6 @@ textarea {
         }
       });
     </script>
-    <a href="https://github.com/nihaojob/markdown-css-smartisan"><img style="position: absolute; top: 0; right: 0; width: 149px; height: 149px; border: 0;" src="https://nihaojob.github.io/markdown-css-smartisan/examples/fork-me-right-graphite@2x.png" alt="Fork me on GitHub"></a>
+    <!-- <a href="https://github.com/nihaojob/markdown-css-smartisan"><img style="position: absolute; top: 0; right: 0; width: 149px; height: 149px; border: 0;" src="https://nihaojob.github.io/markdown-css-smartisan/examples/fork-me-right-graphite@2x.png" alt="Fork me on GitHub"></a> -->
   </body>
 </html>
