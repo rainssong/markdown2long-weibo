@@ -7,7 +7,7 @@
   <script src="https://unpkg.com/marked@0.3.6"></script>
   <script src="https://unpkg.com/dom-to-image@2.6.0"></script>
   <link rel="stylesheet" type="text/css" id="link"
-    href="css/smartisan.css" />
+    href="css/smartisan.css" crossorigin="anonymous"/>
   <script src="https://unpkg.com/splitpanes@2.4.1/dist/splitpanes.umd.js"></script>
   <link href="https://unpkg.com/splitpanes@2.4.1/dist/splitpanes.css" rel="stylesheet">
   <script src="https://unpkg.com/lodash@3.10.1/index.js"></script>
@@ -341,7 +341,7 @@ Code:
           alert('缓存成功')
         },
         down: function () {
-          domtoimage.toJpeg(document.getElementById('markdown-down-id'), { quality: 0.95, bgcolor: getComputedStyle(document.body) })
+          domtoimage.toJpeg(document.getElementById('markdown-down-id'), { quality: 0.95, bgcolor: "#ffffff"})
             .then(function (dataUrl) {
               var link = document.createElement('a');
               link.download = 'Markdown-Smartisan.jpeg';
@@ -372,7 +372,7 @@ Code:
           if (linkTag) {
             linkTag.setAttribute('href', `${this.currentStyle}`)
           }
-          setTimeout(this.copyStyles, 100);
+          setTimeout(this.copyStyles, 200);
         },
         clear: function () {
           this.input = ''
