@@ -21,3 +21,4 @@ yarn-error.log*
 *.sw?
 ref.html
 css/rain-blue.css
+editor.html
